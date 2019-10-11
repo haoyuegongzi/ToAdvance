@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".animation.AnimationHomeActivity">
+
+    <ImageView
+        android:id="@+id/ivHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/meitu"
+        android:scaleType="fitStart"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRotate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="rotate"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"/>
+
+        <Button
+            android:id="@+id/btnTranslate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="translate"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"/>
+
+        <Button
+            android:id="@+id/btnScale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"/>
+
+        <Button
+            android:id="@+id/btnSlpha"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"/>
+
+        <Button
+            android:id="@+id/btnSet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Set"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_bg"/>
+    </LinearLayout>
+</LinearLayout>
