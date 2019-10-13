@@ -2,18 +2,19 @@ package com.mydemo.toadvanced.animation;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Path;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.BounceInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * TODO:Tween动画
+ * TODO:Tween动画，Value动画，Object属性动画，5.0以上的转场动画
  */
 public class AnimationHomeActivity extends BaseActivity {
     Animation mAnimation;
@@ -61,7 +62,8 @@ public class AnimationHomeActivity extends BaseActivity {
     }
 
     @OnClick({R.id.btnRotate, R.id.btnTranslate, R.id.btnScale, R.id.btnSlpha, R.id.btnSet, R.id.btnTransScreen,
-            R.id.btnValue, R.id.ivHeader, R.id.btnObject, R.id.btnPath})
+            R.id.btnValue, R.id.ivHeader, R.id.btnObject, R.id.btnPath, R.id.btnExplode, R.id.btnSlide, R.id.btnFade,
+            R.id.btnShare})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ivHeader:
@@ -134,6 +136,7 @@ public class AnimationHomeActivity extends BaseActivity {
                 objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
                 objectAnimator.start();
                 break;
+            //该动画还没完善
             case R.id.btnPath:
                 Path path = new Path();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -146,8 +149,40 @@ public class AnimationHomeActivity extends BaseActivity {
                     obj.start();
                 }
                 break;
+            //5.0新转场动画: 分为4种，Explode、Slide、Fade、Share,androidX不支持
+            //Explode的效果是下一个页面的元素从四面八方进入，最终形成完整的页面
+            case R.id.btnExplode:
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    Intent intent = new Intent(mActivity, ExplodeAnimationActivity.class);
+//                    //这个是固定的写法，同时注意目标Activity中的getWindow().setEnterTransition(new Explode());
+//                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+//                }else {
+//                    startView(ExplodeAnimationActivity.class);
+//                }
+                startViewFromAllDirections(ExplodeAnimationActivity.class);
+                break;
+            //下一个页面元素从底部依次向上运动，最终形成完整的页面
+            case R.id.btnSlide:
+                startViewFromBottomToTop(ExplodeAnimationActivity.class);
+                break;
+            case R.id.btnFade:
+                startViewWithAlpha(ExplodeAnimationActivity.class);
+                break;
+            case R.id.btnShare:
+                startViewWithShare(ExplodeAnimationActivity.class);
+                break;
             default:
                 break;
+        }
+    }
+
+    public void startViewWithShare(Class<?> classes){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Intent intent = new Intent(this, classes);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this,
+                Pair.create(ivHeader, "fab")).toBundle());
+        }else {
+            startView(ExplodeAnimationActivity.class);
         }
     }
 }
