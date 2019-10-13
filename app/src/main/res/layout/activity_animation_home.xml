@@ -10,64 +10,182 @@
 
     <ImageView
         android:id="@+id/ivHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
         android:src="@mipmap/meitu"
-        android:scaleType="fitStart"/>
+        android:scaleType="center"/>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnRotate"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="rotate"
-            android:textAllCaps="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/btn_bg"/>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnTranslate"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="translate"
-            android:textAllCaps="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/btn_bg"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="xml实现"
+                android:textSize="16sp"
+                android:textColor="@color/midnightblue"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"/>
 
-        <Button
-            android:id="@+id/btnScale"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="scale"
-            android:textAllCaps="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/btn_bg"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnSlpha"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="alpha"
-            android:textAllCaps="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/btn_bg"/>
+                <Button
+                    android:id="@+id/btnRotate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="rotate"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
 
-        <Button
-            android:id="@+id/btnSet"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Set"
-            android:textAllCaps="false"
-            android:layout_margin="5dp"
-            android:background="@drawable/btn_bg"/>
-    </LinearLayout>
+                <Button
+                    android:id="@+id/btnTranslate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="trans"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnTransScreen"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="transScreen"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnScale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="scale"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnSlpha"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="alpha"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnSet"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Set"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Java代码实现"
+                    android:textSize="16sp"
+                    android:textColor="@color/midnightblue"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"/>
+
+                <TextView
+                    android:id="@+id/tvValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    tools:text="Java代码实现"
+                    android:textSize="16sp"
+                    android:textColor="@color/midnightblue"
+                    android:gravity="center_vertical"
+                    android:paddingStart="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnValue"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="数值发生器"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnObject"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Object动画"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:id="@+id/btnPath"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Object路径"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="scale"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="alpha"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Set"
+                    android:textAllCaps="false"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/btn_bg"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
