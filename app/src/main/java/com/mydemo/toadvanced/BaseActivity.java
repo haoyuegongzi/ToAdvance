@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.util.Pair;
 
+import android.util.Log;
 import android.view.View;
 
 public class BaseActivity extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        Log.i(TAG, "onCreate: " + getLocalClassName());
     }
 
     public void startView(Class<?> classes){

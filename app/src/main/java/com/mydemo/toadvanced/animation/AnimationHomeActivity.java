@@ -19,6 +19,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.mydemo.toadvanced.BaseActivity;
 import com.mydemo.toadvanced.R;
 
@@ -138,27 +140,22 @@ public class AnimationHomeActivity extends BaseActivity {
                 break;
             //该动画还没完善
             case R.id.btnPath:
-                Path path = new Path();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    path.addArc(0, 0, 300, 200, 0,100);
-                    ObjectAnimator obj = ObjectAnimator.ofFloat(ivHeader, View.X, View.Y, path);
-                    obj.setInterpolator(new AnticipateInterpolator());
-                    obj.setDuration(1500);
-                    obj.setRepeatCount(10);
-                    obj.setRepeatMode(ObjectAnimator.REVERSE);
-                    obj.start();
-                }
+//                Path path = new Path();
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    path.addArc(0, 0, 300, 200, 0,100);
+//                    ObjectAnimator obj = ObjectAnimator.ofFloat(ivHeader, View.X, View.Y, path);
+//                    obj.setInterpolator(new AnticipateInterpolator());
+//                    obj.setDuration(1500);
+//                    obj.setRepeatCount(10);
+//                    obj.setRepeatMode(ObjectAnimator.REVERSE);
+//                    obj.start();
+//                }
+
+                startView(VectorAnimationActivity.class);
                 break;
             //5.0新转场动画: 分为4种，Explode、Slide、Fade、Share,androidX不支持
             //Explode的效果是下一个页面的元素从四面八方进入，最终形成完整的页面
             case R.id.btnExplode:
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                    Intent intent = new Intent(mActivity, ExplodeAnimationActivity.class);
-//                    //这个是固定的写法，同时注意目标Activity中的getWindow().setEnterTransition(new Explode());
-//                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-//                }else {
-//                    startView(ExplodeAnimationActivity.class);
-//                }
                 startViewFromAllDirections(ExplodeAnimationActivity.class);
                 break;
             //下一个页面元素从底部依次向上运动，最终形成完整的页面

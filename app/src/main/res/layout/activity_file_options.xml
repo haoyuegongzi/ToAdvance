@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".file.FileOptionsActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acbtnOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="操作"
+        android:layout_marginHorizontal="15dp"/>
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="8dp"
+        android:text="风满楼，卷黄沙，舞剑春秋，名震天下。雨飘渺，倦红尘，还君明珠，秋水浮萍。"/>
+
+    <TextView
+        android:id="@+id/tvNewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="8dp"/>
+</LinearLayout>
