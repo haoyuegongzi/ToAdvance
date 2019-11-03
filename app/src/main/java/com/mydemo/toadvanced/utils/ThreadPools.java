@@ -21,7 +21,7 @@ public class ThreadPools {
      * 创建一个可缓存的线程池,会对线程池大小做限制,线程池大小完全依赖于JVM
      * 如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，
      * 当任务数增加时，此线程池又可以智能的添加新线程来处理任务。
-     * @param runnable
+     * @param runnable：线程
      */
     public static ExecutorService getCachedThreadPool(Runnable runnable){
         ExecutorService service = newCachedThreadPool();
@@ -31,7 +31,7 @@ public class ThreadPools {
 
     /**
      * 创建一个单线程的线程池
-     * @param runnable
+     * @param runnable：线程
      */
     public static ExecutorService getSingleThreadPool(Runnable runnable){
         ExecutorService service = newSingleThreadExecutor();

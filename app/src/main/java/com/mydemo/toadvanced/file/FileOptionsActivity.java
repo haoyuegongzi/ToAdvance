@@ -53,8 +53,7 @@ public class FileOptionsActivity extends BaseActivity {
             ThreadPools.getSingleThreadPool(new Runnable() {
                 @Override
                 public void run() {
-//                    writeContent();
-                    Log.i(TAG, "run: 何建华，我要操你的屄");
+                    writeContent();
                 }
             });
         }
@@ -87,8 +86,9 @@ public class FileOptionsActivity extends BaseActivity {
         if (requestCode != 0x987){
             return;
         }
-        if (grantResults == null || grantResults.length <= 0){
+        if (null == grantResults || grantResults.length <= 0){
             return;
         }
+        writeContent();
     }
 }
